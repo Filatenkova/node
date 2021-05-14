@@ -31,3 +31,19 @@ fs.readdir - cчитывает папку, возвращает массив с 
 path.extname(#имя файла#) - считывает расширение файла
 fs.statSync - получить информацию о файле синхронно
 fs.writeFile - запись данных в файл
+
+// Урок 5. Читаем и пишем CSV и JSON файлы
+JSON
+Запись также через fs.writeFile. Расшрение файла - json. Второй параметр преобразуем в строку через JSON.stringify() для валидности
+Чтение JSON просходит через подключение JSON-файла с помощью require('./task-5-file-1.json');
+
+CSV. Чтение
+В корне проекта (папка node) установим модуль csv-parser - npm i csv-parser
+Подключим модуль через require('csv-parser'); Найдем документацию по модулю - https://www.npmjs.com/package/csv-parser
+Через метод fs.createReadStream читаем CSV-файл
+
+CSV. Запись
+В корне проекта (папка node) установим модуль csv-writer - npm i csv-writer
+Подключим модуль через require('csv-writer').createObjectCsvWriter; Найдем документацию по модулю - https://www.npmjs.com/package/csv-writer
+Далее настраиваем модуль через const csvWriter, конфигурируем колонки и их названия (см. task-5.js)
+Через метод fs.createReadStream записываем CSV-файл
