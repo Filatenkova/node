@@ -47,3 +47,16 @@ CSV. Запись
 Подключим модуль через require('csv-writer').createObjectCsvWriter; Найдем документацию по модулю - https://www.npmjs.com/package/csv-writer
 Далее настраиваем модуль через const csvWriter, конфигурируем колонки и их названия (см. task-5.js)
 Через метод fs.createReadStream записываем CSV-файл
+
+// Урок 6. Получение GET и POST запросов
+Подключаем модуль const http = require('http');
+Подключаем модуль const url = require('url'); чтобы разобрать то, что пришло адресной строке
+Создаем сервер - http.createServer; (см. task-6.js). Теперь сервер доступ по адресу http://localhost:3000/
+GET
+Создаем get-запрос http://localhost:3000/?test=4.
+Ответ сервера - console.log(request);
+Определим метод - console.log(request.method);
+Получим GET-параметр - urlRequest.query.test
+
+POST
+Чтобы разобрать POST-запрос подключаем const { parse } = require('querystring');
