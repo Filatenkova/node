@@ -60,3 +60,6 @@ GET
 
 POST
 Чтобы разобрать POST-запрос подключаем const { parse } = require('querystring');
+
+// Урок 7. Подключение к базе данных MySQL
+Установим модуль - npm install mysql
