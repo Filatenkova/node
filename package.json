@@ -1,17 +1,26 @@
 {
-  "name": "node",
+  "name": "education",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Natalya Filatenkova",
   "license": "ISC",
   "dependencies": {
     "csv-parser": "^3.0.0",
     "csv-writer": "^1.6.0",
     "mysql": "^2.18.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Filatenkova/node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Filatenkova/node/issues"
+  },
+  "homepage": "https://github.com/Filatenkova/node#readme",
+  "description": ""
 }
