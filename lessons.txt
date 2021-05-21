@@ -3,6 +3,7 @@ node - запускаем node js из консоли
 ctrl+C - выходим из node js
 node app - запускаем приложение node, где app = app.js
 .idea - папка со служебными настройками, которые создала программа (добавить запрет коммита для данной папки в .gitignore, так как при передаче проекта нельзя передавать эту папку)
+npm init -y - инициализировать проект с настройками по умолчанию
 
 // Урок 2. Дебаг программ на Node.js
 1 этап. Настройка PhpStorm
@@ -52,6 +53,7 @@ CSV. Запись
 Подключаем модуль const http = require('http');
 Подключаем модуль const url = require('url'); чтобы разобрать то, что пришло адресной строке
 Создаем сервер - http.createServer; (см. task-6.js). Теперь сервер доступ по адресу http://localhost:3000/
+Пояснения для http.createServer: req (запрос), res (ответ)
 GET
 Создаем get-запрос http://localhost:3000/?test=4.
 Ответ сервера - console.log(request);
@@ -72,3 +74,14 @@ POST
 npm init - запускает создание файла конфигурации пакета. Теперь в проекте появился файл package.json
 package.json - файл с описанием проекта. Ключ dependencies - все зависимости
 Теперь при передаче проекта достаточно запустить команду npm install - подтянутся зависимости в нужных версиях
+
+// Урок 10. Express.js
+npm install express --save - установить и добавить в зависимости
+npm install express - установить без зависимостей
+
+Генератор приложений Express
+npm install express-generator -g - зайти в папку с проектами, установить на комп генератор приложений Express (-g - необязательно, флаг установки глобально)
+express --view=pug node-express-generator - создаь приложение Express node-express-generator
+npm install - после перейти в папку проекта (node-express-generator) и установить зависимости npm install
+В package.json заменить "scripts": {"test": "echo \"Error: no test specified\" && exit 1"} на "scripts": {"start": "Server success"}
+DEBUG=node-express-generator:* npm start - запустить приложение
