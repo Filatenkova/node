@@ -16,18 +16,22 @@ const port = process.env.PORT ?? 3000
 // Присваиваем __dirname отдельно, так как подключили express через импорт
 const __dirname = path.resolve()
 
-// Обработаем запрос по url = '/'
-app.get('/', (req, res) => {
-    //res.send('<h1>Hello World!</h1>')
-    // Подключим страницу
-    res.sendFile(path.resolve(__dirname, 'static', 'index.html'))
-})
+// Объявим, что папка static статична, и мы можем брать из нее файлы.
+// Заменяет обработку url через app.get
+app.use(express.static(path.resolve(__dirname, 'static')))
 
-// Обработаем запрос по url = '/features'
-app.get('/features', (req, res) => {
-    // Подключим страницу
-    res.sendFile(path.resolve(__dirname, 'static', 'features.html'))
-})
+// Обработаем запрос по url = '/'. Закомментировала, так как заменила реализацию на app.use
+// app.get('/', (req, res) => {
+//     //res.send('<h1>Hello World!</h1>')
+//     // Подключим страницу
+//     res.sendFile(path.resolve(__dirname, 'static', 'index.html'))
+// })
+
+// Обработаем запрос по url = '/features'. Закомментировала, так как заменила реализацию на app.use
+// app.get('/features', (req, res) => {
+//     // Подключим страницу
+//     res.sendFile(path.resolve(__dirname, 'static', 'features.html'))
+// })
 
 // Обработаем запрос по url = '/download'
 app.get('/download', (req, res) => {
