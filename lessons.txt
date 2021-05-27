@@ -4,6 +4,7 @@ ctrl+C - выходим из node js
 node app - запускаем приложение node, где app = app.js
 .idea - папка со служебными настройками, которые создала программа (добавить запрет коммита для данной папки в .gitignore, так как при передаче проекта нельзя передавать эту папку)
 npm init -y - инициализировать проект с настройками по умолчанию
+Флаг -D – это сокращение для –save-dev - установить зависимость только для разработки
 
 // Урок 2. Дебаг программ на Node.js
 1 этап. Настройка PhpStorm
@@ -75,9 +76,25 @@ npm init - запускает создание файла конфигураци
 package.json - файл с описанием проекта. Ключ dependencies - все зависимости
 Теперь при передаче проекта достаточно запустить команду npm install - подтянутся зависимости в нужных версиях
 
-// Урок 10. Express.js
+// Урок 10. Express.js (см. task-10.js)
 npm install express --save - установить и добавить в зависимости
 npm install express - установить без зависимостей
+npm install -D @types\express - подключаем интерфейсы и типы для работы с express (флаг -D указывает, что зависимость устанавливается только для разработки)
+@types\express необходим для поддержки TypeScript. Типы в контексте TypeScript – это файлы (обычно с расширением .d.ts), которые используются для предоставления информации об API, в данном случае о платформе Express.
+Ctrl + Shift + A, перейдем в Actions, введем nodejs - включим Toggle coding assistance
+npm install -D nodemon - при сохранении кода позволяет автоматически перезагружать сервер
+В package.json добавим команды:
+"scripts": {
+    "serve": "nodemon task-10.js",
+    "start": "node task-10.js"
+  },
+Теперь доступны команды npm run serve, npm run start
+
+Чтобы node понимала, что мы можем работать с импортом и экспортом, добавим "type": "module" в package.json
+process.env.PORT - все, что находится в переменной окружения PORT, или 3000, если там ничего нет.
+export PORT=4200 && node task-10 - через консоль проекта установим новый порт для прослушиваня
+
+! + tab - в PhpStorm создан шаблон html-страницы
 
 Генератор приложений Express
 npm install express-generator -g - зайти в папку с проектами, установить на комп генератор приложений Express (-g - необязательно, флаг установки глобально)
@@ -85,3 +102,8 @@ express --view=pug node-express-generator - создаь приложение Ex
 npm install - после перейти в папку проекта (node-express-generator) и установить зависимости npm install
 В package.json заменить "scripts": {"test": "echo \"Error: no test specified\" && exit 1"} на "scripts": {"start": "Server success"}
 DEBUG=node-express-generator:* npm start - запустить приложение
+
+// Урок 11. PostgreSQL
+Скачать файл установки на Mac OS - https://www.enterprisedb.com/postgresql-tutorial-resources-training?cid=438
+Установка PostgreSQL в Mac OS - https://www.enterprisedb.com/postgres-tutorials/installation-postgresql-mac-os
+ps -ef | grep postgres - проверим, что база успешно установлена

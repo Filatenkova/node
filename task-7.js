@@ -20,7 +20,7 @@ conn.connect(function (err) {
 });
 
 // Тестовый запрос
-let query="SELECT * FROM a209105_node";
+let query = "SELECT * FROM a209105_node";
 
 conn.query(query, (err, result, field) =>{
     console.log(err);
