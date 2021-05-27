@@ -96,6 +96,9 @@ export PORT=4200 && node task-10 - через консоль проекта ус
 
 ! + tab - в PhpStorm создан шаблон html-страницы
 
+Middlewares - связующее (промежуточное) программное обеспечение
+npm install colors - устанавливаем пакет для вывода «красивых» значений
+
 Генератор приложений Express
 npm install express-generator -g - зайти в папку с проектами, установить на комп генератор приложений Express (-g - необязательно, флаг установки глобально)
 express --view=pug node-express-generator - создаь приложение Express node-express-generator
