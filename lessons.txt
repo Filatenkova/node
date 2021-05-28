@@ -106,7 +106,15 @@ npm install - после перейти в папку проекта (node-expre
 В package.json заменить "scripts": {"test": "echo \"Error: no test specified\" && exit 1"} на "scripts": {"start": "Server success"}
 DEBUG=node-express-generator:* npm start - запустить приложение
 
-// Урок 11. PostgreSQL
+// Урок 11. Express.js. Движки представлений (см. task-11.js)
+npm install ejs
+npm install express-handlebars
+
+Константа view engin отвечает за рендеринг представления и преобразование кода в HTML
+app.set("view engine", "hbs"); - определим, какое представление будем использовать
+app.set('views', 'template'); - поменяем папку для хранения представлений
+
+// Урок 12. PostgreSQL
 Скачать файл установки на Mac OS - https://www.enterprisedb.com/postgresql-tutorial-resources-training?cid=438
 Установка PostgreSQL в Mac OS - https://www.enterprisedb.com/postgres-tutorials/installation-postgresql-mac-os
 ps -ef | grep postgres - проверим, что база успешно установлена
