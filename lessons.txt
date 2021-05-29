@@ -114,6 +114,12 @@ npm install express-handlebars
 app.set("view engine", "hbs"); - определим, какое представление будем использовать
 app.set('views', 'template'); - поменяем папку для хранения представлений
 
+EJS
+При рендеринге можно использовать переменные, которые потом можно передавать в шаблон
+{title: 'Main Page'}
+C помощью partials можно подключить единые куски html, используемые на разных страницах
+<%- include('./partials/navbar'); %> используем дефис (-) чтобы html скомпилировался
+
 // Урок 12. PostgreSQL
 Скачать файл установки на Mac OS - https://www.enterprisedb.com/postgresql-tutorial-resources-training?cid=438
 Установка PostgreSQL в Mac OS - https://www.enterprisedb.com/postgres-tutorials/installation-postgresql-mac-os
