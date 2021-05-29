@@ -1,11 +1,17 @@
 import express from 'express'
 import path from 'path'
+import serverRoutes from './routes/servers.js'
 
 const app = express()
 
 const port = process.env.PORT ?? 3000
 
 const __dirname = path.resolve()
+
+app.use(serverRoutes)
+app.use(express.static(path.resolve(__dirname, 'static')))
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 
 // Установим, какое представление мы будем использовать
 app.set('view engine', 'ejs');
