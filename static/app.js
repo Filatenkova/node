@@ -19,7 +19,8 @@ const App = {
                 body: JSON.stringify(data)
             })
             this.name = ''
-            const newServer = await res.json()
+            const id = await res.json()
+            const newServer = {...id, ...data}
             this.servers.push(newServer)
         },
         async remove(id) {
