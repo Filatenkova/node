@@ -121,6 +121,42 @@ C помощью partials можно подключить единые куск�
 <%- include('./partials/navbar'); %> используем дефис (-) чтобы html скомпилировался
 
 // Урок 12. PostgreSQL
+https://postgresapp.com/downloads.html
 Скачать файл установки на Mac OS - https://www.enterprisedb.com/postgresql-tutorial-resources-training?cid=438
 Установка PostgreSQL в Mac OS - https://www.enterprisedb.com/postgres-tutorials/installation-postgresql-mac-os
+Установка клиента - https://www.pgadmin.org/download/pgadmin-4-macos/
 ps -ef | grep postgres - проверим, что база успешно установлена
+
+Удалить PostgreSQL
+sudo /Library/PostgreSQL/13/uninstall-postgresql.app/Contents/MacOS/installbuilder.sh
+sudo rm -rf /Library/PostgreSQL
+sudo rm /etc/postgres-reg.ini
+
+npm install pg - установим модуль для работы с PostgreSQL
+npm install pg-hstore - установим пакет узлов для сериализации и десериализации данных JSON в формат hstore
+
+Действия с БД через консоль
+psql -U postgres - проверить успешный запуск postgres
+\l - список существующих баз данных
+create database node_postgres; - создать новую БД
+\connect node_postgres - подключиться к БД
+\dt - покажет существующие в БД таблицы
+FOREIGN KEY (user_id) REFERENCES person (id) - запись указывает, что есть внешний ключ user_id который ссылается на id из таблицы person
+drop database имя базы - удалить базу данных
+
+// Pool - варинт подключения к БД
+module.exports = pool - экспортируем модуль, чтобы работать с ним в других файлах. В объекте new Pool пишем настройки
+
+// Sequelize - варинт подключения к БД
+npm install sequelize - ORM
+npm install cors - чтобы обращаться из браузера к серверу
+Подключаем в db.js const {Sequelize} = require('sequelize')
+Экспортируем module.exports = new Sequelize
+С помощью Sequelize подключаемся к БД
+С помощью Datetypes описываются типы полей
+
+// DOTENV - чтобы устанавливать переменные
+npm install dotenv
+Создаем файл .env
+Заносим значение переменной. Например, PORT = 3000
+Подключаем с помощью require('dotenv').config()
