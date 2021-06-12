@@ -144,9 +144,6 @@ create database node_postgres; - создать новую БД
 FOREIGN KEY (user_id) REFERENCES person (id) - запись указывает, что есть внешний ключ user_id который ссылается на id из таблицы person
 drop database имя базы - удалить базу данных
 
-// Pool - варинт подключения к БД
-module.exports = pool - экспортируем модуль, чтобы работать с ним в других файлах. В объекте new Pool пишем настройки
-
 // Sequelize - варинт подключения к БД
 npm install sequelize - ORM
 npm install cors - чтобы обращаться из браузера к серверу
@@ -160,3 +157,7 @@ npm install dotenv
 Создаем файл .env
 Заносим значение переменной. Например, PORT = 3000
 Подключаем с помощью require('dotenv').config()
+
+Изучение postgres см. в репозитории node-postgres
+
+

@@ -10,15 +10,3 @@ module.exports = new Sequelize(
         port: process.env.DB_PORT
     }
 )
-
-// Вариант подключения к БД
-// const Pool = require('pg');
-//
-// const pool = new Pool({
-//     user: "filatenkova",
-//     password: "",
-//     host: "localhost",
-//     port: 5432
-// })
-//
-// module.exports = pool
